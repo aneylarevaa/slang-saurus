@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slangopedia - Kamus Slang & Konteks Bahasa Inggris</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --border: #e2e8f0;
+            --tag-bg: #e0e7ff;
+            --tag-text: #3730a3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 14px 20px;
+            font-size: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            outline: none;
+            background: var(--card-bg);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .search-box:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+        }
+
+        .dictionary-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .slang-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 22px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .slang-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .slang-word {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .slang-category {
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .slang-meaning {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #334155;
+        }
+
+        .example-box {
+            background: #f1f5f9;
+            border-left: 4px solid var(--primary);
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.9rem;
+            color: #475569;
+            font-style: italic;
+        }
+
+        .no-results {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 40px;
+            font-size: 1rem;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Slangopedia 🚀</h1>
+            <p>Kamus slang bahasa Inggris lengkap dengan arti, konteks, dan contoh kalimatnya.</p>
+        </header>
+
+        <!-- Search Bar Interaktif -->
+        <input type="text" id="searchInput" class="search-box" placeholder="🔍 Cari kata slang (contoh: TBH, Rizz, ASAP)...">
+
+        <!-- Daftar Kartu Slang -->
+        <div id="dictionaryList" class="dictionary-grid">
+            <!-- Data Slang 1 -->
+            <div class="slang-card" data-word="tbh to be honest jujur" data-category="opinions">
+                <div class="card-header">
+                    <span class="slang-word">TBH (To Be Honest)</span>
+                    <span class="slang-category">Opinions</span>
+                </div>
+                <div class="slang-meaning">Arti: Sejujurnya / Sebenarnya</div>
+                <div class="example-box">"TBH, the horror movie we watched yesterday wasn't that scary."</div>
+            </div>
+
+            <!-- Data Slang 2 -->
+            <div class="slang-card" data-word="rizz karisma merayu" data-category="gen z">
+                <div class="card-header">
+                    <span class="slang-word">Rizz</span>
+                    <span class="slang-category">Gen Z / Internet</span>
+                </div>
+                <div class="slang-meaning">Arti: Kemampuan karisma atau merayu seseorang</div>
+                <div class="example-box">"Bro walked up and got her number instantly, his rizz is unmatched."</div>
+            </div>
+
+            <!-- Data Slang 3 -->
+            <div class="slang-card" data-word="asap as soon as possible secepat mungkin" data-category="time/work">
+                <div class="card-header">
+                    <span class="slang-word">ASAP</span>
+                    <span class="slang-category">Corporate / Texting</span>
+                </div>
+                <div class="slang-meaning">Arti: Secepat mungkin (As Soon As Possible)</div>
+                <div class="example-box">"Please send the report files over to me ASAP."</div>
+            </div>
+
+            <!-- Data Slang 4 -->
+            <div class="slang-card" data-word="slay keren memukau" data-category="gen z">
+                <div class="card-header">
+                    <span class="slang-word">Slay</span>
+                    <span class="slang-category">Gen Z / Pop Culture</span>
+                </div>
+                <div class="slang-meaning">Arti: Tampil luar biasa, keren banget, atau memukau</div>
+                <div class="example-box">"You look incredible in that outfit, absolutely slay!"</div>
+            </div>
+
+            <!-- Data Slang 5 -->
+            <div class="slang-card" data-word="eod end of day batas hari" data-category="corporate">
+                <div class="card-header">
+                    <span class="slang-word">EOD (End of Day)</span>
+                    <span class="slang-category">Corporate</span>
+                </div>
+                <div class="slang-meaning">Arti: Batas akhir waktu kerja hari ini</div>
+                <div class="example-box">"Please submit your activity reports before EOD."</div>
+            </div>
+        </div>
+
+        <div id="noResults" class="no-results">Kata slang yang kamu cari tidak ditemukan 😢</div>
+
+        <footer>
+            <p>Dibuat dengan ❤️ untuk edukasi bahasa Inggris.</p>
+        </footer>
+    </div>
+
+    <!-- Script JavaScript untuk Filter Pencarian -->
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.slang-card');
+        const noResults = document.getElementById('noResults');
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const keywords = card.getAttribute('data-word');
+                if (keywords.includes(term)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
