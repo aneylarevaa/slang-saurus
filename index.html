@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slangopedia - Kamus Slang & Konteks Bahasa Inggris</title>
+    <title>Slang Saurus - Kamus Slang & Konteks Bahasa Inggris</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #f8fafc;
-            --card-bg: #ffffff;
-            --text-main: #1e293b;
+            --bg-color: #ffffff;
+            --card-bg: #f8fafc;
+            --text-main: #0f172a;
             --text-muted: #64748b;
-            --primary: #4f46e5;
-            --primary-hover: #4338ca;
+            --primary: #10b981;
+            --primary-hover: #059669;
             --border: #e2e8f0;
-            --tag-bg: #e0e7ff;
-            --tag-text: #3730a3;
+            --tag-bg: #d1fae5;
+            --tag-text: #065f46;
         }
 
         * {
@@ -44,7 +44,7 @@
         }
 
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             color: var(--primary);
             margin-bottom: 8px;
         }
@@ -61,15 +61,15 @@
             border: 2px solid var(--border);
             border-radius: 12px;
             outline: none;
-            background: var(--card-bg);
+            background: #ffffff;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
             margin-bottom: 30px;
         }
 
         .search-box:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
         }
 
         .dictionary-grid {
@@ -82,13 +82,14 @@
             border: 1px solid var(--border);
             border-radius: 14px;
             padding: 22px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.01);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .slang-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.08);
+            border-color: #a7f3d0;
         }
 
         .card-header {
@@ -101,7 +102,7 @@
         .slang-word {
             font-size: 1.3rem;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--primary-hover);
         }
 
         .slang-category {
@@ -122,13 +123,16 @@
         }
 
         .example-box {
-            background: #f1f5f9;
+            background: #ffffff;
             border-left: 4px solid var(--primary);
             padding: 10px 14px;
             border-radius: 0 8px 8px 0;
             font-size: 0.9rem;
             color: #475569;
             font-style: italic;
+            border-top: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
         .no-results {
@@ -151,7 +155,7 @@
 
     <div class="container">
         <header>
-            <h1>Slangopedia 🚀</h1>
+            <h1>Slang Saurus 🦖</h1>
             <p>Kamus slang bahasa Inggris lengkap dengan arti, konteks, dan contoh kalimatnya.</p>
         </header>
 
@@ -214,7 +218,7 @@
         <div id="noResults" class="no-results">Kata slang yang kamu cari tidak ditemukan 😢</div>
 
         <footer>
-            <p>Dibuat dengan ❤️ untuk edukasi bahasa Inggris.</p>
+            <p>Slang Saurus — Dibuat dengan ❤️ untuk edukasi bahasa Inggris.</p>
         </footer>
     </div>
 
